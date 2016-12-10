@@ -2,11 +2,11 @@
 <datasources xmlns="http://www.jboss.org/ironjacamar/schema">
  <datasource jndi-name="java:jboss/datasources/AccountingDS" enabled="true" 
      use-java-context="true" pool-name="FinanceDatasource">
-  <connection-url>jdbc:postgresql://172.30.201.245:5432/accountingdb</connection-url>
+  <connection-url>jdbc:postgresql://172.30.159.81:5432/contabledb</connection-url>
   <driver>postgresql-9.4.1212.jar</driver>
   <pool></pool>
   <security>
-   <user-name>accounting</user-name>
+   <user-name>contable</user-name>
    <password>redsoft</password>
   </security>
  </datasource>
