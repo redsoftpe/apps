@@ -1,0 +1,8 @@
+#Copiar module.xml y el jar del driver en $JBOSS_HOME/modules/org/postgresql/main/module.xml
+
+./jboss-cli.sh --connect command="/subsystem=datasources/jdbc-driver=postgresql-driver:add(driver-name=postgresql-driver, driver-class-name=org.postgresql.Driver, driver-module-name=org.postgresql)"
+
+./jboss-cli.sh --connect command="/subsystem=datasources:installed-drivers-list"
+
+./jboss-cli.sh --connect --file=/home/user/path/addDataSource.jboss
+

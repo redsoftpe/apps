@@ -1,0 +1,4 @@
+/subsystem=datasources/data-source="ContableDS":add(jndi-name="java:jboss/datasources/ContableDS",max-pool-size=10,min-pool-size=5,driver-name="postgresql-driver",connection-url="jdbc:postgresql://172.30.159.81/contabledb",user-name="contable",password="redsoft")
+
+/subsystem=datasources/data-source=ContableDS:enable
+
