@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+ <datasource jndi-name="java:jboss/datasources/AccountingDS" enabled="true" 
+     use-java-context="true" pool-name="FinanceDatasource">
+  <connection-url>jdbc:postgresql://localhost:5432/accountingdb</connection-url>
+  <driver>postgresql-9.4.1212.jar</driver>
+  <pool></pool>
+  <security>
+   <user-name>accounting</user-name>
+   <password>redsoft</password>
+  </security>
+ </datasource>
+</datasources>
