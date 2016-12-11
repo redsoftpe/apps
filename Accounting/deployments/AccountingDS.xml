@@ -4,7 +4,7 @@
      use-java-context="true" pool-name="AccountingPool">
   <connection-url>jdbc:postgresql://172.30.159.81:5432/contabledb</connection-url>
   <driver>
-         postgresql-9.1-903.jdbc4.jar
+         postgresql-9.4.1212.jar
   </driver>
   <pool>
         <min-pool-size>5</min-pool-size>
