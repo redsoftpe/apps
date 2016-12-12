@@ -2,7 +2,7 @@
 
 batch 
 
-# Create a Database authentication realm
+# Create a Database authentication realm firts
 #/subsystem=security/security-domain=contable-jaas:add
 
 /subsystem=security/security-domain=contable-jaas/authentication=classic:add( \
