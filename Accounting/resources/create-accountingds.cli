@@ -1,5 +1,3 @@
 batch
-/subsystem=datasources/data-source=AccountingDS:add(jndi-name="java:jboss/datasources/AccountingDS", connection-url="jdbc:postgres
-ql://172.30.159.81:5432/contabledb", user-name="contable",password="redsoft",driver-name="postgresql-9.4.1212.jar")
-/subsystem=datasources/data-source=AccountingDS:enable 
+/subsystem=datasources/data-source=AccountingDS:add(jndi-name="java:jboss/datasources/AccountingDS", connection-url="jdbc:postgresql://172.30.159.81:5432/contabledb", user-name="contable",password="redsoft",driver-name="postgresql-9.4.1212.jar")
 run-batch

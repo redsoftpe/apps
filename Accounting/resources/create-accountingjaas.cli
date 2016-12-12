@@ -1,0 +1,4 @@
+batch
+/subsystem=security/security-domain=contable-jaas:add
+
+run-batch
