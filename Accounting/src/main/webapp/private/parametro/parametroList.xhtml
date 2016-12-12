@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmusuario">
+	     <p:growl id="messages"/>
+	     <p:panel>
+		     <p:dataTable id="tableParametroMail" var="parametro" value="#{parametroBean.parametros}" paginator="true" 
+		                  paginatorPosition="bottom" rows="16">
+		        <f:facet name="header">Parametros de Configuracion</f:facet>
+		   		<p:column headerText="Grupo o Tipo" style="text-align: left;">
+		   		      <h:outputText value="#{parametro.tipo}" />
+		   		</p:column>
+		   		<p:column headerText="Nombre" style="text-align: left;">
+		   		      <h:outputText value="#{parametro.nombre}" />
+		   		</p:column>
+		   		<p:column headerText="Valor" style="text-align: left;">
+		   		      <h:outputText value="#{parametro.valor}" />
+		   		</p:column>
+		   			
+		   		<p:column headerText="Accion" style="text-align: left;" >
+		   		      <p:commandLink action="#{parametroBean.prepareEdit(parametro)}">
+		   		         <h:graphicImage value="/resources/images/icons/edit.png"/>
+		   		         <p:spacer width="5"/>
+		   		         <h:outputText value="Editar" />
+		   		      </p:commandLink>
+		   		      <p:spacer width="10"/>
+		   		      <p:commandLink actionListener="#{parametroBean.prepareDelete(parametro)}" update="messages" ajax="false">
+		   		         <h:graphicImage value="/resources/images/icons/del.png"/>
+		   		         <p:spacer width="5"/>
+		   		         <h:outputText value="Eliminar" />
+		   		      </p:commandLink>
+		   		</p:column>
+		       </p:dataTable>
+		       <p:outputLabel value="Nro. de Parametros: #{parametroBean.service.rowsCount}" />
+	     </p:panel> 
+	     <p:panel style="border:0">
+             <p:commandButton action="#{parametroBean.prepareNew}" value="Nuevo"  icon="ui-icon-plus"/>
+         </p:panel>
+	   </h:form>
+	   	 
+	 </ui:define>	
+	</ui:composition>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>
+     <ui:insert>Sinpad</ui:insert>
+   </title>
+  <!--  <f:loadBundle basename="indeci.sinpad.transversal.web.util" var="msg" /> -->
+    <h:outputStylesheet library="css" name="default.css"/>
+</h:head> 
+<h:body>
+   <div id="divPage">
+	   <div id="divHeader" align="left">
+		    <ui:insert  name="header">
+		        <ui:include src="/templates/header.xhtml" />
+		    </ui:insert>
+	   </div>
+	   <div id="divMenuBar" align="left">
+		    <ui:insert  name="menuBar">
+		        <ui:include src="/templates/menu_bar.xhtml" />
+		    </ui:insert>
+	   </div>
+	   <div id="divBody">
+	         <ui:insert  name="body">
+			           Content
+			  </ui:insert>  			          
+	   </div> 
+	   <div id="divFooter" align="left">
+		    <ui:insert name="footer" >
+		         <ui:include src="/templates/footer.xhtml" />
+		    </ui:insert>
+	   </div>
+	 </div>  
+</h:body>	
+</html>

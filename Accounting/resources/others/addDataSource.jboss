@@ -6,6 +6,4 @@
 /subsystem=datasources/data-source=AccountingDS:add(jndi-name="java:jboss/datasources/AccountingDS",connection-url="jdbc:postgersql:/
 /172.30.159.81:5432/contabledb",user-name="contable",password="redsoft",min-pool-size=5,max-pool-size=10,driver-name="postgresql-9.4.1212.jar")
 
-/subsystem=datasources/data-source=AccountingDS:write-attribute(name=password,value='redsoft')
-
 /subsystem=datasources/data-source=AccountingDS:enable 

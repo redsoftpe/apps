@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>      
+   <h:outputStylesheet name="/resources/css/default.css"/>
+</h:head>       
+<h:body>
+	<ui:composition>
+	    <div align="left" >
+	    <h:form id="frmmenubar">
+	        <p:toolbar>
+	         <f:facet name="left">  
+	         	  <p:graphicImage  value="/resources/images/logos/bas.png" />
+	         </f:facet> 
+	         <f:facet name="right">  
+	         	  <h:outputText value="Bienvenido, #{sesionBean.username }" /> 
+                  <p:spacer width="10"/>
+                  <p:commandButton value="Inicio" action="/private/default?faces-redirect=true" icon="ui-icon-home" />
+                  <p:spacer width="10"/>
+                  <p:commandButton value="Logout" action="#{sesionBean.logout}" icon="ui-icon-power" />
+	         </f:facet> 
+	        </p:toolbar>
+	        <p:menubar styleClass="menu-gray">
+	            <p:submenu  label="Seguridad" icon="ui-icon-suitcase" styleClass="menu-gray">
+		              <p:menuitem value="Usuarios"  action="#{usuarioBean.goList()}" icon="ui-icon-person"/>
+		              <p:menuitem value="Roles" action="#{rolBean.goList()}" icon="ui-icon-bookmark"/>
+		              <p:menuitem value="Membresia" action="#{usuarioBean.goListMembresia()}" icon="ui-icon-flag"/>
+	              </p:submenu> 
+	        </p:menubar>          
+	   </h:form>    
+	   </div>
+	 </ui:composition>
+</h:body>		
+</html>

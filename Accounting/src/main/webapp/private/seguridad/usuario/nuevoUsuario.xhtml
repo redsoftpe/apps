@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmusuario">
+	     <p:growl id="messages"/>
+	     <p:panel>
+	     <f:facet name="header">
+		            Nuevo Usuario
+		     </f:facet>
+	     <h:panelGrid columns="2">
+		     <h:outputText value="Usuario" />
+		     <h:inputText value="#{usuarioBean.entity.username}" maxlength="32" size="32" required="true"/>
+		     <h:outputText value="Password" />
+		     <h:inputSecret value="#{usuarioBean.entity.password}" maxlength="32" size="32" required="true"/>
+		     <h:outputText value="Estado" />
+		     <p:selectOneMenu value="#{usuarioBean.entity.estado}">
+		        <f:selectItem itemValue="alta" itemLabel="alta"/>
+		        <f:selectItem itemValue="baja" itemLabel="baja"/>
+		     </p:selectOneMenu>
+		     <h:outputText value="Nombres" />
+		     <h:inputText value="#{usuarioBean.entity.nombre}" maxlength="32" size="32" required="true"/>
+		     <h:outputText value="Apellidos" />
+		     <h:inputText value="#{usuarioBean.entity.apellido}" maxlength="32" size="32" required="true"/>
+		     <h:outputText value="Area" />
+		     <h:inputText value="#{usuarioBean.entity.area}" maxlength="64" size="64" />
+		     <h:outputText value="Cargo" />
+		     <h:inputText value="#{usuarioBean.entity.cargo}" maxlength="64" size="64" />
+		     <h:outputText value="Anexo" />
+		     <h:inputText value="#{usuarioBean.entity.anexo}" maxlength="4" size="4" />
+		     <h:outputText value="Email" />
+		     <h:inputText value="#{usuarioBean.entity.email}" maxlength="64" size="64" />
+		 </h:panelGrid>
+		 </p:panel>
+	     <p:panel style="border:0">
+	         <p:commandButton action="#{usuarioBean.create}" value="Grabar" icon="ui-icon-disk"/>
+             <p:commandButton action="#{usuarioBean.goList}" value="Listado"  immediate="true" icon="ui-icon-star"/>
+         </p:panel>
+	   </h:form>
+	   	 
+	 </ui:define>	
+	</ui:composition>
+</html>

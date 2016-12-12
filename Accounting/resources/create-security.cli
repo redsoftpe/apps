@@ -1,0 +1,25 @@
+# Demo CLI script, Author: Carlos Carreno, Copyrights 2016
+
+batch 
+
+# Create a Database authentication realm
+#/subsystem=security/security-domain=contable-jaas:add
+
+/subsystem=security/security-domain=contable-jaas/authentication=classic:add( \
+    login-modules=[ \
+        { \
+            "code" => "Database", \
+            "flag" => "required", \
+            "module-options" => [ \
+                ("unauthenticatedIdentity"=>"guest"), \
+                ("dsJndiName"=>"java:jboss/datasources/AccountingDS"), \
+                ("principalsQuery"=>"select u.password from contable.usuario u where u.username=?"), \
+                ("rolesQuery" => "select r.rolename, 'Roles' FROM contable.usuario u, contable.usuario_rol r where u.username=r.username and  u.username=?") \
+            ] \
+        } \
+    ] \
+)
+ 
+# Execute and reload
+run-batch
+:reload

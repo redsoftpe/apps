@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmmembresia">
+	     <p:growl id="messages"/>
+	     <p:panel header="Usuario">
+		   <!--   <h:panelGrid  columns="2" width="100%" > <h:outputLabel value="Usuario " for="txtUsuarioName" /> -->
+		   <h:outputText id="txtUsuarioName" value="Usuario: #{usuarioBean.entity.username}"  size="6" />
+		   <!-- 	 </h:panelGrid> -->
+	     </p:panel>
+	     <p:panel header="Seleccion de Roles" >
+		     <p:pickList id="pckusuariomembresia"
+			        value="#{usuarioBean.rolModel}" var="rol"  
+			        itemValue="#{rol}" itemLabel="#{rol.rolename}"
+			        converter="rolConverter"> 
+			        <f:facet name="sourceCaption">Disponibles</f:facet>
+			        <f:facet name="targetCaption">Seleccionados</f:facet>
+			        <p:ajax event="transfer" listener="#{usuarioBean.onTransferMembresia}"/> 
+			        <p:column width="450px">  
+			              #{rol.rolename}  
+			         </p:column>
+	          </p:pickList>
+	      </p:panel>
+	      <p:panel style="border:0">
+	          <p:commandButton action="#{usuarioBean.updateMembresia}" value="Grabar Cambios" icon="ui-icon-disk" />
+             <p:commandButton action="#{usuarioBean.backtoMembresiaList}" value="Regresar"  immediate="true" icon="ui-icon-star"/>
+         </p:panel>
+	   </h:form>
+	   	 
+	 </ui:define>	
+	</ui:composition>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmusuario">
+	     <p:growl id="messages"/>
+	     <p:panel>
+		     <p:dataTable id="tableusuario" var="usuario" value="#{usuarioBean.lista}" paginator="true" 
+		                  paginatorPosition="bottom" rows="16">
+		        <f:facet name="header">Usuarios</f:facet>
+		   		<p:column headerText="Usuario" style="text-align: left;">
+		   		      <h:outputText value="#{usuario.username}" />
+		   		</p:column>
+		   		<p:column headerText="Roles" style="text-align: left;">
+		   		      <h:outputText value="#{usuarioBean.getRolesString(usuario)}"/>
+		   		</p:column>									   		
+		   		<p:column headerText="Accion" style="text-align: left;" >
+		   		      <p:commandLink action="#{usuarioBean.prepareMembresiaEdit(usuario)}">
+		   		         <h:graphicImage value="/resources/images/icons/edit.png"/>
+		   		         <p:spacer width="5"/>
+		   		         <h:outputText value="Añadir Rol" />
+		   		      </p:commandLink>		   		     
+		   		</p:column>
+		       </p:dataTable>
+	     </p:panel> 	     
+	   </h:form>	   	 
+	 </ui:define>	
+	</ui:composition>
+</html>

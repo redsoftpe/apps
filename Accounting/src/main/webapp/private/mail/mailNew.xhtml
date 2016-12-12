@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmparametro">
+	     <p:growl id="messages"/>
+	     <p:panel>
+	     <f:facet name="header">
+		            Enviar Mensaje
+		     </f:facet>
+	     <h:panelGrid columns="2">
+		     <h:outputText value="Destinatarios" />
+		     <p:inputText value="#{mailBean.emailAddresses}" maxlength="80" size="80" required="true"/>
+		     <h:outputText value="Asunto" />
+		     <p:inputText value="#{mailBean.asunto}" maxlength="80" size="80" required="true"/>
+		     <h:outputText value="Mensaje" />
+		     <p:editor value="#{mailBean.mensaje}" width="1024" height="380" required="true"/>
+		  </h:panelGrid>
+		 </p:panel>
+	     <p:panel style="border:0">
+	         <p:commandButton action="#{mailBean.sendMail()}" value="Enviar Mensaje" icon="ui-icon-email"/>            
+         </p:panel>
+	   </h:form>
+	    <p:growl autoUpdate="true" showDetail="true"/>	 
+	 </ui:define>	
+	</ui:composition>
+</html>

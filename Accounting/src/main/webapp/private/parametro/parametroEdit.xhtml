@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	 <ui:define name="body">
+	   <h:form id="frmparametro">
+	     <p:growl id="messages"/>
+	     <p:panel>
+	     <f:facet name="header">
+		            Editar parametro
+		     </f:facet>
+	     <h:panelGrid columns="2">
+		     <h:outputText value="Nombre" />
+		     <h:inputText value="#{parametroBean.entity.nombre}" maxlength="64" size="32" required="true"/>
+		     <h:outputText value="Tipo" />
+		     <h:inputText value="#{parametroBean.entity.tipo}" maxlength="16" size="32" required="true"/>
+		     <h:outputText value="Valor" />
+		     <h:inputText value="#{parametroBean.entity.valor}" maxlength="64" size="64" required="true"/>
+		   </h:panelGrid>
+		 </p:panel>
+	     <p:panel style="border:0">
+	         <p:commandButton action="#{parametroBean.update}" value="Grabar" icon="ui-icon-disk"/>
+             <p:commandButton action="#{parametroBean.goList}" value="Listado"  immediate="true" icon="ui-icon-star"/>
+         </p:panel>
+	   </h:form>
+	   	 
+	 </ui:define>	
+	</ui:composition>
+</html>

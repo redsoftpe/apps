@@ -1,0 +1,22 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 90%;
+}
+
+
+.ui-menubar,.ui-menu-child,.ui-menu,.ui-toolbar {
+   background:#01DF01;
+}
+
+.menu-gray{
+   background:#D8D8D8;	
+}
+
+
+.headerPanelGrid{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;font-size: medium;
+	text-align: left;
+}
+
+.text-input{
+    background-color:#FFFFFF;    
+}

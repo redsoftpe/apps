@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/main.xhtml">
+	   <ui:define name="menuBar"></ui:define>
+	   <ui:define name="body">
+	       
+	    <br/>  <br/> <br/>  <br/>
+	    <div id="divLogin" align="center">
+	      <h:graphicImage value="/resources/images/pictures/no_autorizado.jpg"/>
+	      <br/>
+	       <p>Ud. aun no es usuario o no esta autorizado a realizar esta operacion.</p>
+	        <p>Contacte con el administrador. email: admin@sinpad.gob.pe</p>
+	        <h:form>
+	          <p:commandLink action="/private/default?faces-redirect=true">Ir a Login</p:commandLink>
+	        </h:form>
+         </div> 
+         <br/> <br/>  <br/>  <br/> 
+	  
+	   </ui:define>
+	</ui:composition>
+</html>
